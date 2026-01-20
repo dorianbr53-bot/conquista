@@ -1,0 +1,96 @@
+
+/* =========================================================================
+   Conquista de la Chakana — Tema Claro (crema + dorado)
+   Archivo: ./assets/css/chakana-theme-light.css
+   ========================================================================= */
+
+:root {
+  --bg: #f2e9d7;        /* fondo crema */
+  --panel: #e6dcc7;     /* panel principal */
+  --panel-soft: #e0d4bd;/* panel secundario */
+  --gold: #b9922f;      /* dorado protagonista */
+  --text: #2b221b;      /* texto marrón oscuro */
+
+  /* Colores de casillas */
+  --pastel-green: #9fc38f;
+  --yellow: #e6c670;
+  --dark-brown: #8b5a2b;
+
+  --shadow-strong: 0 14px 36px rgba(0,0,0,.20);
+  --shadow-soft:   0 10px 26px rgba(0,0,0,.16);
+  --shadow-inset:  inset 0 0 0 1px #c9c9c9;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+
+h1, h2, h3 { color: var(--gold); }
+.subtitle { color: var(--text); opacity: .9; }
+
+.modal, .modal-screen .modal {
+  background: var(--panel);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  box-shadow: var(--shadow-strong);
+}
+
+#phaseGrid .card {
+  background: var(--panel);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.20);
+}
+.phase-name { color: var(--gold); border-color: var(--gold); }
+
+#rightPanel .banner, .panel-box, .player-card {
+  background: var(--panel-soft);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 12px;
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+}
+
+#turnBanner.accent {
+  border: 2px solid currentColor;
+  box-shadow: 0 12px 32px rgba(0,0,0,.20), 0 0 0 3px rgba(0,0,0,.10) inset;
+}
+#turnBanner .turn-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.12); object-fit: cover; vertical-align: middle; margin-left: 6px;
+}
+#rightPanel .banner.flash { animation: flash 600ms ease-in-out infinite; }
+@keyframes flash { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.2)} }
+
+.btn { background: #d8caa8; border: 1px solid rgba(0,0,0,.12); color: var(--text); border-radius: 10px; }
+.btn:hover { filter: brightness(1.03); }
+.btn-primary { background: var(--gold); border-color: var(--gold); color: #1a120b; }
+.btn-secondary { background: #cdbb8f; color: var(--text); }
+.btn-ghost { background: transparent; border-color: rgba(0,0,0,.12); color: var(--text); }
+.btn-lang.active { background: var(--gold); color: #1a120b; border-color: var(--gold); }
+
+.input { background: #efe6d4; border-color: rgba(0,0,0,.12); color: var(--text); }
+.input::placeholder { color: rgba(0,0,0,.45); }
+
+.slider { background: #cdbb8f; }
+input:checked + .slider { background: var(--gold); }
+.slider:before { background: #fff; }
+
+#gameCanvas { background: #ffffff; border-radius: 10px; box-shadow: var(--shadow-inset); }
+
+.mini-avatars .card { background: #e7dcc3; border: 1px solid var(--gold); }
+.mini-avatars .card img { border-radius: 8px; }
+
+.player-card.active { outline: 2px solid currentColor; box-shadow: 0 0 12px 3px rgba(0,0,0,.12), 0 0 18px 6px currentColor; }
+
+#playerInfoOverlay { backdrop-filter: blur(2px) brightness(0.9); }
+.player-panel { background: var(--panel); border: 2px solid var(--gold); border-radius: 16px; box-shadow: 0 18px 48px rgba(0,0,0,.18); }
+.skin-item { background: #e7dcc3; border-color: var(--gold); }
+.info-row { background: #e7dcc3; border-color: var(--gold); }
+
+#boardLayout .card { background: var(--panel); border: 2px solid var(--gold); border-radius: 12px; box-shadow: var(--shadow-soft); }
+
+.grid .card { background: var(--panel); border: 1px solid var(--gold); color: var(--text); }
+.grid .card img { border-radius: 10px; box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
+button:focus, .selectable:focus, .input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.badge { background: #e7dcc3; border: 1px solid rgba(0,0,0,.10); color: var(--text); border-radius: 8px; }
+.card, .panel-box, .player-card { background-clip: padding-box; }
